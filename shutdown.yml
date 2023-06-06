@@ -1,0 +1,10 @@
+---
+- hosts: all
+  gather_facts: no
+
+  tasks:
+    - name: Shutdown order 30 
+      raw: shutdown -h now
+      ignore_unreachable: true
+      ignore_errors: true
+
