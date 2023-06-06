@@ -4,9 +4,13 @@
   become: true
   tasks:
 
-  - name: Install Apache httpd package
+  - name: Install Apache httpd and php package
     yum:
-      name: httpd
+      name:
+        - httpd
+        - php
+      state: latest
+    when: ansible_os_family == "RedHat"
 
   - name: Enable service to start on boot
     service:
