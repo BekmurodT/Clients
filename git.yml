@@ -1,0 +1,9 @@
+---
+
+  - name: Install GIT on nodes
+    hosts: all
+    tasks:
+      - name: Install GIT
+        yum:
+          name: git
+          state: latest
